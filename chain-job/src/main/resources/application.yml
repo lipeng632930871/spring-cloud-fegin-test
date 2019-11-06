@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: chain-job
+server:
+  port: 9080
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+
+feign:
+  compression:
+    request:
+      enabled: true
+      min-request-size: 2048
+      mine-types: text/xml,application/xml,application/json
+    response:
+      enabled: true
+  httpclient:
+    enabled: false
+    max-connections: 1000
+    max-connections-per-route: 100
+  hystrix:
+    enabled: true
+  okhttp:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 16000
+        timeout:
+          enabled: true
+ribbon:
+  ConnectTimeout: 2000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+  ReadTimeout: 20000
+  ServerListRefreshInterval: 10

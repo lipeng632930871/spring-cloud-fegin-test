@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/chain-app/chain-app.iml" filepath="$PROJECT_DIR$/chain-app/chain-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chain-job/chain-job.iml" filepath="$PROJECT_DIR$/chain-job/chain-job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud-fegin-test.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud-fegin-test.iml" />
+    </modules>
+  </component>
+</project>
