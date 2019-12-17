@@ -19,6 +19,7 @@ public class InitRegisterHandlersProcessor implements ApplicationListener<Contex
     private EventServiceExecutor eventServiceExecutor;
 
 
+    //可以使用guava的观察者模式去改造一下
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         eventDispatcher.registerHandler(EventType.CXC_SITE_CLOSE_REFUND,autoCloseOrderCxcHandler);

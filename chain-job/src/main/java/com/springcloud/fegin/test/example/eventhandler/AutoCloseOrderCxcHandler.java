@@ -2,6 +2,7 @@ package com.springcloud.fegin.test.example.eventhandler;
 
 import com.springcloud.fegin.test.example.event.ChainOvertimeEvent;
 import com.springcloud.fegin.test.example.eventframework.Handler;
+import com.springcloud.fegin.test.example.eventframework.SpringBeanLoader;
 import com.springcloud.fegin.test.example.feign.TestFeginClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,9 @@ public class AutoCloseOrderCxcHandler implements Handler<ChainOvertimeEvent> {
     @Override
     public void handleEvent(ChainOvertimeEvent event) {
         try {
+            String s = SpringBeanLoader.getBeanOfType(TestFeginClient.class).testApp();
 //            String s = testFeginClient.testApp();
-//            log.info("testApp:{}", s);
+            log.info("testApp:{}", s);
             log.info("test:{}", event);
         } catch (Exception e) {
         }
